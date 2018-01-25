@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" BackgroundColor="#2F4051"
+            x:Class="Poke.Home">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView x:Name="myscrollview" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout x:Name="HomeStack">
+                <StackLayout BackgroundColor="Green" Margin="10" Padding="3">
+                    <Label Style="{StaticResource LabelStyle}" Text="Unpaid Balance"/>
+                    <Label x:Name="lblEth" Style="{StaticResource LabelStyle}" HeightRequest="50" FontSize="30" BackgroundColor="Black" Text=""/>
+                </StackLayout>
+                <Grid Margin="10">
+                    <BoxView BackgroundColor="#333"  />
+                    <Grid BackgroundColor="Transparent">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <microcharts:ChartView x:Name="chartView" Grid.Row="0"/>
+                    </Grid>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>
